@@ -1,0 +1,28 @@
+/*
+*  左侧浮动，右侧宽度自适应，右侧margin让出左侧宽度；
+*/
+.body{
+	min-width: 630px;
+}
+header{
+	border: 1px solid #000000;
+	text-align: center;
+}
+.container{
+	overflow: hidden; /* 清除浮动 */
+}
+.nav{
+	width: 200px;
+	background-color: #33ff857a;
+	float: left;
+}
+.section{
+	background-color: #ef348a57;
+	width: 100%; 
+	margin-left: 200px;
+
+}
+.nav, .section{
+	padding-bottom: 2000px; 
+	margin-bottom: -2000px;
+}

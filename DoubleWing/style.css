@@ -1,0 +1,58 @@
+/* 
+*  1. 通过类选择器，分别对center-container、left、right设置基础样式，
+*     其中left和right宽度固定，center宽度自适应（100%）
+*  
+*  2. 让三个块元素都向左浮动，并利用父容器清除浮动，
+*     即通过overflow:hidden,创建BFC防止高度塌陷
+*
+*  3. 此时，left排在了center后面，right排在了left后面
+*
+*  4. 通过margin属性，将left向左移动center的宽度,right向左移动left的宽度
+*
+*  5. 此时，left和right压盖住了center，
+*     需要通过center（margin-left，margin-right）预留出left和right的空间
+*/
+
+.body{
+	min-width: 630px;
+}
+
+.container{
+	overflow: hidden;/* 清除浮动 */
+}
+
+.center-container{
+	width: 100%;
+	float: left;
+}
+
+.center{
+	background-color: #fff144a6;
+	margin-left: 100px;
+	margin-right: 200px;
+}
+
+.left{
+	width: 100px;
+	background-color: #33ff857a;
+	float: left;
+	margin-left: -100%;/* left排在了center后面，需要向左移动center的宽度*/
+}
+
+.right{
+	width: 200px;
+	background-color: #ef348a57;
+	float: left;
+	margin-left: -200px;/* right排在了left后面，需要向左移动left的宽度*/
+}
+
+.center, .left, .right{
+	/* center、left、right分别增加了padding;
+	  margin-bottom的负值，又回退了padding增加的值;
+	  又由于容器元素overflow: hidden，将多余的部分剪裁掉，于是高度自适应了 */
+	padding-bottom: 2000px; 
+	margin-bottom: -2000px;
+}
+
+
+

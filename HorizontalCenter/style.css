@@ -1,0 +1,38 @@
+/*
+*1. margin: auto
+* 
+*2. 元素盒模型变为行内块，父元素使用text-align: center
+*
+*3. 定位，元素绝对定位，向右偏移50%，再反向移动元素宽度的一半
+*/
+.body{
+	min-width: 630px;
+}
+.center1{
+	width: 100px;
+	height: 100px;
+	background-color: #33ff857a;
+	margin: auto;
+}
+
+.center2-father{
+	text-align: center;
+}
+.center2{
+	width: 100px;
+	height: 100px;
+	background-color: #fff144a6;
+	display: inline-table;
+}
+
+.center3-father{
+	position: relative;
+}
+.center3{
+	width: 100px;
+	height: 100px;
+	background-color: #ef348a57;
+	position: absolute;
+	left: 50%; /* 先向右偏移容器的一半 */
+	margin-left: -50px;  /* 再反向移动元素宽度的一半 */
+}

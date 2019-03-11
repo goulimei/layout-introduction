@@ -1,0 +1,40 @@
+/*
+*1. line-height与height相等
+* 
+*2. 父元素为table，子元素为table-cell，vertical-align: middle
+*
+*3. 定位，元素绝对定位，向下偏移50%，再反向移动元素高度的一半
+*/
+.body{
+	min-width: 630px;
+}
+.center1-father{
+	width: 100px;
+	height: 100px;
+	background-color: #33ff857a;
+	line-height: 100px;
+}
+
+.center2-father{
+	display: table;
+	margin-bottom: 50px;
+}
+.center2{
+	width: 100px;
+	height: 100px;
+	background-color: #fff144a6;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.center3-father{
+	position: relative;
+}
+.center3{
+	width: 100px;
+	height: 100px;
+	background-color: #ef348a57;
+	position: absolute;
+	top: 50%;
+	margin-top: -50px;
+}
